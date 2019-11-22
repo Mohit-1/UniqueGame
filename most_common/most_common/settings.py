@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '-4g#9uu2bpgk4%#$q9n%k97b+zp%wq)8mv+1!8izo$8mw(u1im'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['uniquegame.pythonanywhere.com']
 
 
 # Application definition
