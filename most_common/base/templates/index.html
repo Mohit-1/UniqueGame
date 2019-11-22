@@ -21,13 +21,13 @@
 	</style>
 </head>
 <body>
-	<div style="float: right; margin-right: 30%"><strong><a href="/home/">Home</a></strong></div>
+	<div style="float: right; margin-right: 30%"><strong><a href="/">Home</a></strong></div>
 	<div style="width: 70%; margin: auto">
 		<h3>THE UNIQUE GAME</h3><br>
 		<h4>Hey there! Think you're up for a game?</h4>
 		Just type a word that you can think of and see if any one else has typed it here before you<br>
 		<br>
-		<form action="/home/" method="post">
+		<form action="/" method="post">
 			{% csrf_token %}
 			{{ form }}
 			<input type="submit" class="btn btn-primary" value="Submit" />
