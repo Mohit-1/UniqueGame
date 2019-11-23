@@ -21,7 +21,7 @@
 	</style>
 </head>
 <body>
-	<div style="float: right; margin-right: 30%"><strong><a href="/">Home</a></strong></div>
+	<div style="float: right; margin-right: 30%"><strong><a style="margin-right: 20px" href="/">Home</a><a href="#footer">Share</a></strong></div>
 	<div style="width: 70%; margin: auto">
 		<h3>THE UNIQUE GAME</h3><br>
 		<h4>Hey there! Think you're up for a game?</h4>
@@ -34,9 +34,9 @@
 		</form>
 
 		{% if count == 0 %}
-			<strong style="color: green">Congrats!</strong> You just entered a unique word on this platform. Have a cookie. &#127850;
+			<strong style="color: green">Congrats!</strong> You just entered a unique word on this platform. Have a cookie. &#127850; <br><br><br>
 		{% elif count > 0 %}
-			<strong style="color: red">Hard luck!</strong> Your word has been entered {{ count }} time(s) before you.
+			<strong style="color: red">Hard luck!</strong> Your word has been entered {{ count }} time(s) before you. <br><br><br>
 		{% endif%}
 
 		{% if most_common_qs %}
@@ -64,7 +64,9 @@
 	<a class="a2a_button_telegram"></a>
 	<a class="a2a_button_linkedin"></a>
 	</div>
+	<br><br>
 	<script async src="https://static.addtoany.com/menu/page.js"></script>
 	</div>
+	<footer id="footer"></footer>
 </body>
 </html>
