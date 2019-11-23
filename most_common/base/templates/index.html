@@ -34,9 +34,9 @@
 		</form>
 
 		{% if count == 0 %}
-			<strong style="color: green">Congrats!</strong> You just entered a unique word on this platform. Have a cookie. &#127850; <br><br><br>
+			<strong style="color: green">Congrats!</strong> You just entered a unique word '{{ word }}' on this platform. Have a cookie. &#127850; <br><br><br>
 		{% elif count > 0 %}
-			<strong style="color: red">Hard luck!</strong> Your word has been entered {{ count }} time(s) before you. <br><br><br>
+			<strong style="color: red">Hard luck!</strong> Your word '{{ word }}' has been entered {{ count }} time(s) before you. <br><br><br>
 		{% endif%}
 
 		{% if most_common_qs %}

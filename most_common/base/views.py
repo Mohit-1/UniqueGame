@@ -29,11 +29,11 @@ def base_view(request):
         form = WordForm(request.POST)
         if form.is_valid():
             obj = Word()
-            word = form.cleaned_data['word']
-            obj.word = word.lower()
+            word = form.cleaned_data['word'].lower()
+            obj.word = word
             obj.save()
             count = len(Word.objects.filter(word=word.lower())) - 1 # To show words entered before 
-            return render(request, 'index.html', {'form': form, 'count': count})
+            return render(request, 'index.html', {'form': form, 'count': count, 'word': word})
 
     elif request.method == 'GET':
         most_common_qs = Word.objects.all().values('word').annotate(total=Count('word')).order_by('-total')[:10]
