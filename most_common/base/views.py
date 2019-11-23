@@ -3,9 +3,27 @@ from base.models import Word
 from django.db.models import Count
 from base.forms import WordForm
 
+# This is to be used if web-server level blocking is not possible
+BLOCKED_IP_LIST = []
+
+
+# To get the IP of unwanted clients, in case blocking on web server level
+# is not possible
+def get_client_ip(request):
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    return ip
+
 
 def base_view(request):
     form = WordForm()
+
+    ip = get_client_ip(request)
+    if ip in BLOCKED_IP_LIST:
+        return render(request, 'index.html', {'form': form})
 
     if request.method == 'POST':
         form = WordForm(request.POST)
